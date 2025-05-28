@@ -2,11 +2,11 @@
 {"-publish":true,"permalink":"/dockerlabs/muy-facil/obssesion/","PassFrontmatter":true}
 ---
 
-![[Pasted image 20250526082559.png\|Pasted image 20250526082559.png]]
+![Pasted image 20250526082559.png](/img/user/imgs/Pasted%20image%2020250526082559.png)
 
 empezamos dando un nmap para poder verificar los puertos abiertos:
 
-![[Pasted image 20250526082650.png\|Pasted image 20250526082650.png]]
+![Pasted image 20250526082650.png](/img/user/imgs/Pasted%20image%2020250526082650.png)
 
 Vemos que los puertos abiertos son:
 - 21

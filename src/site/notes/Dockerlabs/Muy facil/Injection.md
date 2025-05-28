@@ -2,7 +2,7 @@
 {"-publish":true,"permalink":"/dockerlabs/muy-facil/injection/","PassFrontmatter":true}
 ---
 
-![[Pasted image 20250525004817.png\|Pasted image 20250525004817.png]]
+![Pasted image 20250525004817.png](/img/user/imgs/Pasted%20image%2020250525004817.png)
 
 
 Empezamos haciendo un nmap para ver los puertos abiertos de la ip:
