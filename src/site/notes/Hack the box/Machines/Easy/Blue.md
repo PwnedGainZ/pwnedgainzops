@@ -8,7 +8,7 @@ Empezamos realizando un escaneo de nmap
 nmap -sCV 10.10.10.40 -T5 -oN blue_machine -v
 ```
 
-![[Pasted image 20250522000912.png\|Pasted image 20250522000912.png]]
+![Pasted image 20250522000912.png](/img/user/imgs/Pasted%20image%2020250522000912.png)
 Observamos que tenemos algunos puertos importantes como el 139 o 445.
 
 Procederemos a hacer una enumeracion basica de smb con el objetivo de detectar el sistema operativo, nombre de host y dominio del equipo remoto.
@@ -17,7 +17,7 @@ Procederemos a hacer una enumeracion basica de smb con el objetivo de detectar e
 nmap -p 139,445 --script=smb-os-discovery 10.10.10.40
 ```
 
-![[Pasted image 20250522001503.png\|Pasted image 20250522001503.png]]
+![Pasted image 20250522001503.png](/img/user/imgs/Pasted%20image%2020250522001503.png)
 
 Descubrimos que el hostname de Blue vienea ser 'haris-PC', tambien descubrimos que el sistema operativo corriendo en la maquina objetivo es **windows 7**.
 
@@ -28,18 +28,18 @@ nmap -p 445 --script=smb-enum-shares 10.10.10.40
 ```
 
 Nos retorna lo siguiente, quiere decir que el puerto esta siendo filtrado por un firewall. Es decir, el paquete fue enviado, pero no recibio ninguna respuesta
-![[Pasted image 20250522002159.png\|Pasted image 20250522002159.png]]
+![Pasted image 20250522002159.png](/img/user/imgs/Pasted%20image%2020250522002159.png)
 
 Al igual con el puerto 139:
 
-![[Pasted image 20250522002327.png\|Pasted image 20250522002327.png]]
+![Pasted image 20250522002327.png](/img/user/imgs/Pasted%20image%2020250522002327.png)
 
 Si listamos con smbclient nos sale lo siguiente:
 ```
 smbclient -L //10.10.10.40 -N
 ```
 
-![[Pasted image 20250522002414.png\|Pasted image 20250522002414.png]]
+![Pasted image 20250522002414.png](/img/user/imgs/Pasted%20image%2020250522002414.png)
 
 Pero por practica vamos a usar msfconsole:
 
@@ -84,11 +84,11 @@ Los unico recursos compartidos con los cuales podemos interactuar son dos: **Sha
 
 Intentamos con **Share**:
 
-![[Pasted image 20250522160800.png\|Pasted image 20250522160800.png]]
+![Pasted image 20250522160800.png](/img/user/imgs/Pasted%20image%2020250522160800.png)
 
 Intentamos con "Users"
 
-![[Pasted image 20250522004743.png\|Pasted image 20250522004743.png]]
+![Pasted image 20250522004743.png](/img/user/imgs/Pasted%20image%2020250522004743.png)
 
 Nada interesante el los recursos compartidos.
 
@@ -123,7 +123,7 @@ Procedere a probar con un payload de nmap para verificar si esta maquina Windows
 nmap -p 445 --script smb-vuln-ms17-010 10.10.10.40
 ```
 
-![[Pasted image 20250522163445.png\|Pasted image 20250522163445.png]]
+![Pasted image 20250522163445.png](/img/user/imgs/Pasted%20image%2020250522163445.png)
 
 O tambien podemos usar el siguiente payload para enumerar vulnerabiliades conocidas en el SMB:
 
@@ -131,7 +131,7 @@ O tambien podemos usar el siguiente payload para enumerar vulnerabiliades conoci
 nmap -p 445 --script smb-vuln* 10.10.10.40
 ```
 
-![[Pasted image 20250522163652.png\|Pasted image 20250522163652.png]]
+![Pasted image 20250522163652.png](/img/user/imgs/Pasted%20image%2020250522163652.png)
 
 Algunos payloads extras:
 - nmap -p 445 --script smb-enum-shares,smb-enum-users,smb-vuln* ip (escaneo combinado completo de SMB)
@@ -163,11 +163,11 @@ Si el sismte es de 32 bits, usa: windows/meterpreter/reverse_tcp
 
 En este casoo el payload que sirve es el de **x64**
 
-![[Pasted image 20250522164803.png\|Pasted image 20250522164803.png]]
+![Pasted image 20250522164803.png](/img/user/imgs/Pasted%20image%2020250522164803.png)
 
 Damos un **shell** en el meterpreter y tenemos nuestra consola de windows interactiva:
 
-![[Pasted image 20250522165214.png\|Pasted image 20250522165214.png]]
+![Pasted image 20250522165214.png](/img/user/imgs/Pasted%20image%2020250522165214.png)
 
 
 Para ver el usuario con el que se ejecuta el exploit usamos **whoami**: 

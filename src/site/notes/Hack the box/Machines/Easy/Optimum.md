@@ -4,7 +4,7 @@
 
 Empezamos haciendo un nmap para enumerar los sevicios existentes dentro de la maquina:
 
-![[Pasted image 20250522180943.png\|Pasted image 20250522180943.png]]
+![Pasted image 20250522180943.png](/img/user/imgs/Pasted%20image%2020250522180943.png)
 
 Vemos que el unico puerto es el 80 (HTTB), lo cual significa que existe una pagina web detras.
 - Por si acaso observamos la version del puerto 80 -> **80/tcp open  http    HttpFileServer httpd 2.3**
@@ -15,7 +15,7 @@ Ejecutamos un script de nmap para saber la vulnerablidad del puerto 80 y ver si 
 nmap -p 80 --script http-vuln* 10.10.10.8
 ```
 
-![[Pasted image 20250522181358.png\|Pasted image 20250522181358.png]]
+![Pasted image 20250522181358.png](/img/user/imgs/Pasted%20image%2020250522181358.png)
 
 #### Informacion extra:
 
@@ -86,7 +86,7 @@ exploit
 
 Encontramos el user.txt en kostas/Desktop/user.txt
 
-![[Pasted image 20250522195207.png\|Pasted image 20250522195207.png]]
+![Pasted image 20250522195207.png](/img/user/imgs/Pasted%20image%2020250522195207.png)
 
 Procederemos a subir winpeas con metasploit:
 
@@ -95,20 +95,20 @@ Damos un:
 
 Este comando se usa principalmente en Meterpreter (Metasploit) para obtener informacion del sistema comprometido.
 
-![[Pasted image 20250522195623.png\|Pasted image 20250522195623.png]]
+![Pasted image 20250522195623.png](/img/user/imgs/Pasted%20image%2020250522195623.png)
 
 Con esto podemos saber si el sistema es de 64 bits o 32 bits por ejemplo.
 
 Descargaremos winpeas desde aqui: https://github.com/peass-ng/PEASS-ng/releases
 
-![[Pasted image 20250522202517.png\|Pasted image 20250522202517.png]]
+![Pasted image 20250522202517.png](/img/user/imgs/Pasted%20image%2020250522202517.png)
 
 Usamos el comando de **upload /home/cesar/HTB/Optimum/winPEASx64.exe**, el cual fue la carpeta en la cual descargamos el winpeas en nuestro kali linux.
 ```
 upload /home/cesar/HTB/Optimum/winPEASx64.exe C:\\Users\\kostas\\Desktop\\winpeas\\winpeas.exe
 ```
 
-![[Pasted image 20250522202846.png\|Pasted image 20250522202846.png]]
+![Pasted image 20250522202846.png](/img/user/imgs/Pasted%20image%2020250522202846.png)
 
 Una vez lo hemos subido pasamos a ejecutarlo.
 
@@ -188,14 +188,14 @@ Nos salimos del meterpreter y damos lo siguiente:
 sessions
 ```
 
-![[Pasted image 20250522213209.png\|Pasted image 20250522213209.png]]
+![Pasted image 20250522213209.png](/img/user/imgs/Pasted%20image%2020250522213209.png)
 En mi caso eligire cualquiera de las dos sessiones ya que lo hice dos veces.
 
 **set SESSION 3**
 
 Luego damos **run** o **exploit** y se ejecutara.
 
-![[Pasted image 20250522213313.png\|Pasted image 20250522213313.png]]
+![Pasted image 20250522213313.png](/img/user/imgs/Pasted%20image%2020250522213313.png)
 
 
 Despues de probar los paylodas, el que funciono es:
@@ -222,7 +222,7 @@ run
 
 Despues usamos **shell** en el meterpreter y podemos acceder al administrator:
 
-![[Pasted image 20250522230037.png\|Pasted image 20250522230037.png]]
+![Pasted image 20250522230037.png](/img/user/imgs/Pasted%20image%2020250522230037.png)
 
 Obtenemos la root.txt en el Administrator.
 
