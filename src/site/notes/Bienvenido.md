@@ -12,4 +12,5 @@ Este es nuestro nuestro Digital Garden, estaremos adjuntando nuestras notas y al
 Pasa, curiosea y si algo te gusta, bien. Y si no… te vas la mismísima mrd
 
 Atte.  
-**MrBloody y C3sar**
+**MrBloody y 0xC3sarR**
+
