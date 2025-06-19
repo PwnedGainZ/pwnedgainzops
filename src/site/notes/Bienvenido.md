@@ -14,4 +14,4 @@ Pasa, curiosea y si algo te gusta, piola. Y si no te gusta GTFo
 ![MEME_CIBERSEC.jpeg](/img/user/MEME_CIBERSEC.jpeg)
 
 Atte.  
-**MrBloody y 0xC3sarR**
+**[MrBloody](https://www.linkedin.com/in/joseph-eduardo-segura-m-231003192/) y [0xC3sarR](https://www.linkedin.com/in/cesar-alonso-apolaya-pacheco-94226b212/)**

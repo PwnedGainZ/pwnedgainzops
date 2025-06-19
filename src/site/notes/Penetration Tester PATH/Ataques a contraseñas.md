@@ -128,6 +128,39 @@ Podemos usar una herramienta llamada **CeWL** para escanear palabras potenciales
 
 ![Pasted image 20250617183101.png](/img/user/Pasted%20image%2020250617183101.png)
 
+
+### Spraying, Stuffing, and Defaults
+
+#### Password Spraying
+
+El `password spraying` es un tipo de ataque de fuerza bruta en el que un atacante intenta usar una sola contraseña en muchas cuenta de usuario diferentes. Por ejemplo, si se sabe que los administradores de una empresa en particular suelen utilizar `ChangeMe123!` al configurar nuevas cuentas, valdría la pena rociar esta contraseña en todas las cuentas de `usuario` para identificar las que no se actualizaron.
+
+![Pasted image 20250618170411.png](/img/user/Pasted%20image%2020250618170411.png)
+
+##### Relleno de credenciales
+
+Es otro tipo de ataque de fuerza bruta en el que un atacante utiliza credenciales robadas de un servicio para intentar acceder a otros. Dado que `muchos usuarios reutilizan sus nombres de usuario y passwords en múltiples plataformas` (como el email, las redes sociales y los sistemas empresariales). Por ejemplo, si tenemos una lista de `username:password` obtenidas de una fuga de base de datos, podemos usar `hydra` para realizar un ataque de relleno de credenciales contra un servicio SSH utilizando la siguiente sintaxis:
+
+![Pasted image 20250618170817.png](/img/user/Pasted%20image%2020250618170817.png)
+
+##### Credenciales default
+
+Muchos sistemas, como enrutadores, firewalls y DB, vienen con `default credentials`. Si bien las mejores prácticas dictan que los administradores cambien estas credenciales durante la configuración, a veces se dejan sin cambios, lo que representa un grave riesgo de seguridad.
+
+Hay varias listas de credenciales predeterminadas conocidas disponibles en internet, pero, también hay herramientas dedicadas que automatizan el proceso. Un ejemplo de ello es la [default credentials cheat sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet) , que podemos instalar con `pip3`.
+
+![Pasted image 20250618171514.png](/img/user/Pasted%20image%2020250618171514.png)
+
+Una vez instalado, podemos usar el método `creds` para buscar credenciales predeterminadas conocidas asociadas con un producto o proveedor específico.
+
+![Pasted image 20250618171756.png](/img/user/Pasted%20image%2020250618171756.png)
+
+Imaginemos que hemos identificado ciertas aplicaciones en uso en la red de un cliente. Después de investigar las credenciales predeterminadas en línea, podemos combinarlas en una nueva lista, con el formato `username:password`, y reutilizar el anteriormente mencionado `hydra` para intentar acceder.
+
+![Pasted image 20250618171923.png](/img/user/Pasted%20image%2020250618171923.png)
+
+
+
 ---
 #password #hash
 
